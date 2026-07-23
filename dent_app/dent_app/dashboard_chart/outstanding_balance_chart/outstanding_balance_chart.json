@@ -1,0 +1,16 @@
+{
+    "doctype": "Dashboard Chart",
+    "name": "Outstanding Balance Chart",
+    "chart_name": "Outstanding Balance Chart",
+    "module": "Dent App",
+    "chart_type": "Sum",
+    "document_type": "Treatment Plan",
+    "based_on": "creation",
+    "value_based_on": "remaining_amount",
+    "timespan": "Last Year",
+    "time_interval": "Monthly",
+    "type": "Line",
+    "color": "#ff5858",
+    "is_public": 1,
+    "is_standard": 1
+}

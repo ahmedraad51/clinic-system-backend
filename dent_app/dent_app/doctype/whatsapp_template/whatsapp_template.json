@@ -1,0 +1,21 @@
+{
+    "doctype": "DocType",
+    "name": "WhatsApp Template",
+    "module": "Dent App",
+    "autoname": "format:WAT-{#####}",
+    "title_field": "template_name",
+    "track_changes": 1,
+    "fields": [
+        {"fieldtype": "Section Break", "fieldname": "section_main", "label": "Template Details"},
+        {"fieldname": "template_name", "label": "Template Name", "fieldtype": "Data", "reqd": 1, "in_list_view": 1},
+        {"fieldname": "trigger", "label": "Trigger", "fieldtype": "Select", "options": "24 Hours Before\n2 Hours Before\nManual", "reqd": 1, "in_list_view": 1},
+        {"fieldtype": "Column Break", "fieldname": "col_break_1"},
+        {"fieldname": "is_active", "label": "Is Active", "fieldtype": "Check", "default": "1", "in_list_view": 1},
+        {"fieldtype": "Section Break", "fieldname": "section_message", "label": "Message"},
+        {"fieldname": "message", "label": "Message", "fieldtype": "Text Editor", "reqd": 1, "description": "Use {{patient_name}}, {{date}}, {{time}}, {{doctor_name}}, {{clinic_name}} as placeholders"}
+    ],
+    "permissions": [
+        {"role": "System Manager", "read": 1, "write": 1, "create": 1, "delete": 1},
+        {"role": "Clinic Manager", "read": 1, "write": 1, "create": 1, "delete": 0}
+    ]
+}

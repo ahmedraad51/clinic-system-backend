@@ -1,0 +1,9 @@
+{
+    "doctype": "Report",
+    "name": "Treatment Revenue",
+    "report_name": "Treatment Revenue",
+    "module": "Dent App",
+    "report_type": "Script Report",
+    "is_standard": "Yes",
+    "ref_doctype": "Treatment Plan"
+}

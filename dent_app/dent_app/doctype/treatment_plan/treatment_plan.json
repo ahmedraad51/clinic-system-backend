@@ -1,0 +1,35 @@
+{
+    "name": "Treatment Plan",
+    "module": "Dent App",
+    "doctype": "DocType",
+    "autoname": "format:TRT-{YYYY}-{#####}",
+    "title_field": "treatment_type",
+    "search_fields": "patient,treatment_type,tooth_number",
+    "track_changes": 1,
+    "sort_field": "creation",
+    "sort_order": "DESC",
+    "fields": [
+        {"fieldtype": "Section Break", "fieldname": "section_main", "label": "Treatment Details"},
+        {"fieldname": "patient", "label": "Patient", "fieldtype": "Link", "options": "Patient", "reqd": 1, "in_list_view": 1, "in_standard_filter": 1},
+        {"fieldname": "doctor", "label": "Doctor", "fieldtype": "Link", "options": "Doctor", "in_list_view": 1, "in_standard_filter": 1},
+        {"fieldtype": "Column Break", "fieldname": "col_break_1"},
+        {"fieldname": "treatment_type", "label": "Treatment Type", "fieldtype": "Select", "options": "Filling\nRoot Canal\nCrown\nBridge\nExtraction\nImplant\nCleaning\nWhitening", "reqd": 1, "in_list_view": 1, "in_standard_filter": 1},
+        {"fieldname": "tooth_number", "label": "Tooth Number", "fieldtype": "Data"},
+        {"fieldname": "status", "label": "Status", "fieldtype": "Select", "options": "Planned\nIn Progress\nCompleted\nCancelled", "default": "Planned", "in_list_view": 1},
+        {"fieldtype": "Section Break", "fieldname": "section_clinical", "label": "Clinical Information"},
+        {"fieldname": "diagnosis", "label": "Diagnosis", "fieldtype": "Small Text"},
+        {"fieldname": "treatment_notes", "label": "Treatment Notes", "fieldtype": "Text Editor"},
+        {"fieldtype": "Section Break", "fieldname": "section_financial", "label": "Financial Details"},
+        {"fieldname": "total_cost", "label": "Total Cost", "fieldtype": "Currency", "reqd": 1, "in_list_view": 1},
+        {"fieldtype": "Column Break", "fieldname": "col_break_2"},
+        {"fieldname": "paid_amount", "label": "Paid Amount", "fieldtype": "Currency", "read_only": 1, "default": "0"},
+        {"fieldtype": "Column Break", "fieldname": "col_break_3"},
+        {"fieldname": "remaining_amount", "label": "Remaining Amount", "fieldtype": "Currency", "read_only": 1, "default": "0", "in_list_view": 1}
+    ],
+    "permissions": [
+        {"role": "System Manager", "read": 1, "write": 1, "create": 1, "delete": 1, "print": 1, "export": 1},
+        {"role": "Clinic Manager", "read": 1, "write": 1, "create": 1, "delete": 1, "print": 1, "export": 1},
+        {"role": "Clinic Doctor", "read": 1, "write": 1, "create": 1, "delete": 0, "print": 1, "export": 0},
+        {"role": "Clinic Receptionist", "read": 1, "write": 0, "create": 0, "delete": 0, "print": 1, "export": 0}
+    ]
+}

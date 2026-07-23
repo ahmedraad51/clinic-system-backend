@@ -1,0 +1,35 @@
+{
+    "doctype": "DocType",
+    "name": "Clinic Settings",
+    "module": "Dent App",
+    "issingle": 1,
+    "track_changes": 1,
+    "fields": [
+        {"fieldtype": "Section Break", "fieldname": "section_basic", "label": "Clinic Information"},
+        {"fieldname": "clinic_name", "label": "Clinic Name", "fieldtype": "Data", "reqd": 1},
+        {"fieldname": "logo", "label": "Logo", "fieldtype": "Attach Image"},
+        {"fieldtype": "Column Break", "fieldname": "col_break_1"},
+        {"fieldname": "phone_number", "label": "Phone Number", "fieldtype": "Data", "options": "Phone"},
+        {"fieldname": "email", "label": "Email", "fieldtype": "Data", "options": "Email"},
+        {"fieldname": "address", "label": "Address", "fieldtype": "Small Text"},
+        {"fieldtype": "Section Break", "fieldname": "section_financial", "label": "Financial Settings"},
+        {"fieldname": "currency", "label": "Currency", "fieldtype": "Data", "default": "USD"},
+        {"fieldtype": "Column Break", "fieldname": "col_break_2"},
+        {"fieldname": "tax_number", "label": "Tax Number", "fieldtype": "Data"},
+        {"fieldtype": "Section Break", "fieldname": "section_hours", "label": "Working Hours"},
+        {"fieldname": "working_days", "label": "Working Days", "fieldtype": "Small Text", "description": "e.g. Monday, Tuesday, Wednesday"},
+        {"fieldtype": "Column Break", "fieldname": "col_break_3"},
+        {"fieldname": "opening_time", "label": "Opening Time", "fieldtype": "Time"},
+        {"fieldname": "closing_time", "label": "Closing Time", "fieldtype": "Time"},
+        {"fieldtype": "Section Break", "fieldname": "section_features", "label": "Feature Flags"},
+        {"fieldname": "enable_whatsapp", "label": "Enable WhatsApp Reminders", "fieldtype": "Check", "default": "0"},
+        {"fieldname": "enable_patient_portal", "label": "Enable Patient Portal", "fieldtype": "Check", "default": "0"},
+        {"fieldtype": "Column Break", "fieldname": "col_break_4"},
+        {"fieldname": "enable_financial_reports", "label": "Enable Financial Reports", "fieldtype": "Check", "default": "1"},
+        {"fieldname": "theme_color", "label": "Theme Color", "fieldtype": "Color", "default": "#5e64ff"}
+    ],
+    "permissions": [
+        {"role": "System Manager", "read": 1, "write": 1, "create": 1, "delete": 1},
+        {"role": "Clinic Manager", "read": 1, "write": 1, "create": 1, "delete": 0}
+    ]
+}

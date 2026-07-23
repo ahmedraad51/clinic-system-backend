@@ -1,0 +1,30 @@
+{
+    "name": "Payment",
+    "module": "Dent App",
+    "doctype": "DocType",
+    "autoname": "format:PAY-{YYYY}-{#####}",
+    "title_field": "payment_number",
+    "search_fields": "patient,payment_number",
+    "track_changes": 1,
+    "sort_field": "payment_date",
+    "sort_order": "DESC",
+    "fields": [
+        {"fieldtype": "Section Break", "fieldname": "section_main", "label": "Payment Details"},
+        {"fieldname": "payment_number", "label": "Payment Number", "fieldtype": "Data", "read_only": 1},
+        {"fieldname": "patient", "label": "Patient", "fieldtype": "Link", "options": "Patient", "reqd": 1, "in_list_view": 1, "in_standard_filter": 1},
+        {"fieldtype": "Column Break", "fieldname": "col_break_1"},
+        {"fieldname": "treatment_plan", "label": "Treatment Plan", "fieldtype": "Link", "options": "Treatment Plan", "in_list_view": 1, "in_standard_filter": 1},
+        {"fieldname": "payment_date", "label": "Date", "fieldtype": "Date", "reqd": 1, "in_list_view": 1, "default": "Today"},
+        {"fieldtype": "Section Break", "fieldname": "section_amount", "label": "Amount"},
+        {"fieldname": "amount", "label": "Amount", "fieldtype": "Currency", "reqd": 1, "in_list_view": 1},
+        {"fieldtype": "Column Break", "fieldname": "col_break_2"},
+        {"fieldname": "payment_method", "label": "Payment Method", "fieldtype": "Select", "options": "Cash\nCard\nBank Transfer", "reqd": 1, "in_list_view": 1, "in_standard_filter": 1},
+        {"fieldtype": "Section Break", "fieldname": "section_notes", "label": "Notes"},
+        {"fieldname": "notes", "label": "Notes", "fieldtype": "Small Text"}
+    ],
+    "permissions": [
+        {"role": "System Manager", "read": 1, "write": 1, "create": 1, "delete": 1, "print": 1, "export": 1},
+        {"role": "Clinic Manager", "read": 1, "write": 1, "create": 1, "delete": 1, "print": 1, "export": 1},
+        {"role": "Clinic Receptionist", "read": 1, "write": 1, "create": 1, "delete": 0, "print": 1, "export": 0}
+    ]
+}

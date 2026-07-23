@@ -1,0 +1,25 @@
+{
+    "doctype": "Dashboard",
+    "name": "Clinic Dashboard",
+    "dashboard_name": "Clinic Dashboard",
+    "module": "Dent App",
+    "is_default": 1,
+    "is_standard": 1,
+    "charts": [
+        {
+            "doctype": "Dashboard Chart Link",
+            "chart": "Monthly Revenue Chart",
+            "width": "Full"
+        },
+        {
+            "doctype": "Dashboard Chart Link",
+            "chart": "Appointments Today Chart",
+            "width": "Half"
+        },
+        {
+            "doctype": "Dashboard Chart Link",
+            "chart": "Outstanding Balance Chart",
+            "width": "Half"
+        }
+    ]
+}

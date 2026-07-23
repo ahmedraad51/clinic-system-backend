@@ -1,0 +1,33 @@
+{
+    "name": "Appointment",
+    "module": "Dent App",
+    "doctype": "DocType",
+    "autoname": "format:APT-{YYYY}-{#####}",
+    "title_field": "appointment_number",
+    "search_fields": "patient,doctor,appointment_date",
+    "track_changes": 1,
+    "sort_field": "appointment_date",
+    "sort_order": "DESC",
+    "fields": [
+        {"fieldtype": "Section Break", "fieldname": "section_main", "label": "Appointment Details"},
+        {"fieldname": "appointment_number", "label": "Appointment Number", "fieldtype": "Data", "read_only": 1},
+        {"fieldname": "patient", "label": "Patient", "fieldtype": "Link", "options": "Patient", "reqd": 1, "in_list_view": 1, "in_standard_filter": 1},
+        {"fieldtype": "Column Break", "fieldname": "col_break_1"},
+        {"fieldname": "doctor", "label": "Doctor", "fieldtype": "Link", "options": "Doctor", "reqd": 1, "in_list_view": 1, "in_standard_filter": 1},
+        {"fieldname": "status", "label": "Status", "fieldtype": "Select", "options": "Scheduled\nConfirmed\nCompleted\nCancelled\nNo Show", "default": "Scheduled", "in_list_view": 1, "in_standard_filter": 1},
+        {"fieldtype": "Section Break", "fieldname": "section_datetime", "label": "Date & Time"},
+        {"fieldname": "appointment_date", "label": "Date", "fieldtype": "Date", "reqd": 1, "in_list_view": 1, "in_standard_filter": 1},
+        {"fieldtype": "Column Break", "fieldname": "col_break_2"},
+        {"fieldname": "appointment_time", "label": "Time", "fieldtype": "Time", "reqd": 1},
+        {"fieldname": "duration_minutes", "label": "Duration (Minutes)", "fieldtype": "Int", "default": "30"},
+        {"fieldtype": "Section Break", "fieldname": "section_notes", "label": "Notes"},
+        {"fieldname": "reason_for_visit", "label": "Reason for Visit", "fieldtype": "Small Text"},
+        {"fieldname": "notes", "label": "Notes", "fieldtype": "Text Editor"}
+    ],
+    "permissions": [
+        {"role": "System Manager", "read": 1, "write": 1, "create": 1, "delete": 1, "print": 1, "export": 1},
+        {"role": "Clinic Manager", "read": 1, "write": 1, "create": 1, "delete": 1, "print": 1, "export": 1},
+        {"role": "Clinic Doctor", "read": 1, "write": 1, "create": 1, "delete": 0, "print": 1, "export": 0},
+        {"role": "Clinic Receptionist", "read": 1, "write": 1, "create": 1, "delete": 0, "print": 1, "export": 0}
+    ]
+}

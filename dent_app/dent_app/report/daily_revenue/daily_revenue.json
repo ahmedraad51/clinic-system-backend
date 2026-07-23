@@ -1,0 +1,9 @@
+{
+    "doctype": "Report",
+    "name": "Daily Revenue",
+    "report_name": "Daily Revenue",
+    "module": "Dent App",
+    "report_type": "Script Report",
+    "is_standard": "Yes",
+    "ref_doctype": "Payment"
+}
